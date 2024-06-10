@@ -21,14 +21,11 @@ inline std::string randomcolor() {
         "\033[34m",  // BLUE
         "\033[35m",  // MAGENTA
         "\033[36m",  // CYAN
-        "\033[37m",  // WHITE
-        "\033[90m",  // LIGHTBLACK_EX
         "\033[94m",  // LIGHTBLUE_EX
         "\033[96m",  // LIGHTCYAN_EX
         "\033[92m",  // LIGHTGREEN_EX
         "\033[95m",  // LIGHTMAGENTA_EX
         "\033[91m",  // LIGHTRED_EX
-        "\033[97m",  // LIGHTWHITE_EX
         "\033[93m"   // LIGHTYELLOW_EX
     };
     static bool initialized = false;
