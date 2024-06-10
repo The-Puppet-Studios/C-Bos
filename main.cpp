@@ -9,11 +9,11 @@ int main() {
     ccout("Booting cbos the crappy os\n");
     msleep(500);
     ccout("Loading libraries and variables\n");
-    float version = 1.00;
+    float version = 1.01;
     msleep(300);
     ccout("Done!\n");
     msleep(200);
-    ccout("Welcome to C-Bos v1.0.0!\n");
+    ccout("Welcome to C-Bos v1.0.1!\n");
     msleep(200);
     ccout("Type help for a list of commands!\n");
 
