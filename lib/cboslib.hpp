@@ -9,12 +9,14 @@
 #include <cstdlib>
 #include <ctime>
 
+using namespace std;
+
 inline void msleep(int milliseconds) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
+    this_thread::sleep_for(chrono::milliseconds(milliseconds));
 }
 
-inline std::string randomcolor() {
-    static const std::vector<std::string> color_choices = {
+inline string randomcolor() {
+    static const vector<string> color_choices = {
         "\033[31m",  // RED
         "\033[32m",  // GREEN
         "\033[33m",  // YELLOW
@@ -30,14 +32,14 @@ inline std::string randomcolor() {
     };
     static bool initialized = false;
     if (!initialized) {
-        std::srand(static_cast<unsigned int>(std::time(nullptr)));
+        srand(static_cast<unsigned int>(time(nullptr)));
         initialized = true;
     }
-    int random_index = std::rand() % color_choices.size();
+    int random_index = rand() % color_choices.size();
     return color_choices[random_index];
 }
 
-inline std::string resetcolor() {
+inline string resetcolor() {
     return "\033[0m";
 }
 
