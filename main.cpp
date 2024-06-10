@@ -6,16 +6,16 @@
 using namespace std;
 
 int main() {
-    cout << randomcolor() << "Booting cbos the crappy os" << resetcolor() << endl;
+    ccout("Booting cbos the crappy os\n");
     msleep(500);
-    cout << randomcolor() << "Loading libraries and variables" << resetcolor() << endl;
+    ccout("Loading libraries and variables\n");
     float version = 1.00;
     msleep(300);
-    cout << randomcolor() << "Done!" << resetcolor() << endl;
+    ccout("Done!\n");
     msleep(200);
-    cout << randomcolor() << "Welcome to C-Bos v1.0.0!" << resetcolor() << endl;
+    ccout("Welcome to C-Bos v1.0.0!\n");
     msleep(200);
-    cout << randomcolor() << "Type help for a list of commands!\n" << resetcolor();
+    ccout("Type help for a list of commands!\n");
 
     bool cmdloop = true;
     while (cmdloop) {
