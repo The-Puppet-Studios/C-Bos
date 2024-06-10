@@ -43,8 +43,8 @@ inline string resetcolor() {
     return "\033[0m";
 }
 
-inline void ccout(string strung) {
-    cout << randomcolor() << strung << resetcolor();
+inline void ccout(string arg1) {
+    cout << randomcolor() << arg1 << resetcolor();
 }
 
 #endif // CBOS_HPP
