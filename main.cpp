@@ -20,7 +20,7 @@ int main() {
     bool cmdloop = true;
     while (cmdloop) {
         string cmd;
-        cout << "\033[33m> \033[0m";  // Yellow color for the prompt
+        cout << "\033[32m> \033[0m";  // Yellow color for the prompt
         getline(cin, cmd);
         string lowercmd = cmd;
         transform(lowercmd.begin(), lowercmd.end(), lowercmd.begin(), ::tolower);
@@ -41,6 +41,10 @@ int main() {
             ccout("2: Exit (Exits the program wowie)\n");
             msleep(100);
             ccout("3: How to add a command (Shows a guide on how to add a command)\n");
+            msleep(100);
+            ccout("4: Base64 encode (encodes text)\n");
+            msleep(100);
+            ccout("5: Base64 decode (decodes text)\n");
         }
 
         else if (lowercmd == "how to add a command") {
@@ -73,6 +77,22 @@ int main() {
             msleep(500);
             ccout("You can probably figure out how to make a function in cboslib.hpp and if not tell me to add a guide for that\n");
             msleep(500);
+        }
+
+        else if (lowercmd == "base64 encode") {
+            string encodestring;
+            cout << ("String to encode: ");
+            getline(cin, encodestring);
+            cout << base64encode(encodestring);
+            cout << "\n";
+        }
+
+        else if (lowercmd == "base64 decode") {
+            string decodestring;
+            cout << ("String to decode: ");
+            getline(cin, decodestring);
+            cout << base64decode(decodestring);
+            cout << "\n";
         }
 
 
