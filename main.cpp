@@ -9,7 +9,10 @@ int main() {
     ccout("Booting cbos the crappy os\n");
     msleep(500);
     ccout("Loading libraries and variables\n");
-    float version = 1.01;
+    float version = 1.10;
+    msleep(500);
+    ccout("Checking for updates...\n");
+    versioncheck(version);
     msleep(300);
     ccout("Done!\n");
     msleep(200);
@@ -95,7 +98,9 @@ int main() {
             cout << "\n";
         }
 
-
+        else if (lowercmd == "check version") {
+            versioncheck(version);
+        }
 
         else {
             cout << cmd + " is stupid! please try again!\n";

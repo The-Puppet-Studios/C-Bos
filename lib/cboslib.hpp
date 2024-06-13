@@ -10,6 +10,7 @@
 #include <ctime>
 #include <iostream>
 #include <stdexcept>
+#include <curl/curl.h>  // Include libcurl header
 
 using namespace std;
 
@@ -95,6 +96,47 @@ inline string base64decode(const string &text) {
         }
     }
     return decoded;
+}
+
+// Helper function for curl to write the response to a string
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
+    ((string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
+
+// Function to perform version check
+inline string versioncheck(float ver) {
+    CURL* curl;
+    CURLcode res;
+    string readBuffer;
+
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
+        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
+        curl_easy_setopt(curl, CURLOPT_URL, "https://thepuppet57.141412.xyz/C-Bos/backend/versioncheck.php");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        curl_easy_setopt(curl, CURLOPT_VERBOSE, false);
+        res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+        if(res != CURLE_OK) {
+            throw runtime_error("curl_easy_perform() failed: " + string(curl_easy_strerror(res)));
+        }
+        float localvalue = ver;
+
+        if (res > localvalue) {
+            ccout("Update available!\n");
+        } else if (res < localvalue) {
+            ccout("This is a beta!\n");
+        } else {
+            ccout("No updates available!\n");
+        }
+        
+    } else {
+        throw runtime_error("Failed to initialize curl");
+    }
+    return readBuffer;
 }
 
 #endif // CBOS_HPP
