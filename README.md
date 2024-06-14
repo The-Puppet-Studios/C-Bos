@@ -1,12 +1,7 @@
 # C-Bos
- A command-line app made in C++ for fun.
- Originally made in python but this is the official rewrite.
+ A command-line app made in python for fun.
+ So I made the original in python in 2022 but I wanted to rewrite it so I made it in c++ but then I realized that curl is dumb so I rewrote it again in python.
 
 # How to use
- If you dont want to compile from source then just download the latest version and run the exe
- Then type `help`
-
-# How to compile from source
- Install [gcc](https://gcc.gnu.org/releases.html) installed (search up a tutorial on how to install it)
- Then run `g++ main.cpp` in the cbos dir and it should be compiled!
- Also the exe only works on windows but you can just compile it for your platform.
+ Install python then download the latest version of cbos then run install.cmd (it installs essential libraries)
+ Then type `help` while in cbos
