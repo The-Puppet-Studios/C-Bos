@@ -9,7 +9,7 @@ cboslib.settitle("C-Bos")
 
 cboslib.cprint("Booting cbos the crappy os...")
 time.sleep(0.5)
-version = 2.0
+version = 2.1
 cboslib.cprint("Checking for updates...")
 cboslib.versioncheck(version)
 time.sleep(0.3)
