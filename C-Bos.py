@@ -5,6 +5,8 @@ import colorama
 import ctypes
 import sys
 
+cboslib.settitle("C-Bos")
+
 cboslib.cprint("Booting cbos the crappy os...")
 time.sleep(0.5)
 version = 2.0
@@ -14,6 +16,21 @@ time.sleep(0.3)
 cboslib.cprint("Done!")
 time.sleep(0.3)
 cboslib.cprint("Welcome to cbos! Type \"help\" for a list of commands!")
+time.sleep(0.3)
+adminyay = input(cboslib.randomstringcolor("Are you an admin? [Y/N]: ")).lower()
+
+if(adminyay == "y"):
+    admincode = input(cboslib.randomstringcolor("Put in the admin code: "))
+    cboslib.cprint("Authenticating...")
+    isadmin = cboslib.adminauth(admincode)
+    if(isadmin == True):
+        cboslib.cprint("Admin code is correct!")
+    else:
+        cboslib.cprint("Admin code not correct.")
+else:
+    cboslib.cprint("Not an admin...")
+
+time.sleep(0.3)
 
 cmdloop = True
 while cmdloop:
@@ -49,3 +66,15 @@ while cmdloop:
 
     elif(lowercmd == "check version"):
         cboslib.versioncheck(version)
+
+    
+
+    elif(isadmin):
+        # The home of admin commands.
+        if(lowercmd == "admin real"):
+            print("yay")
+
+    
+
+    else:
+        print(f"{cmd} is stupid! try again!")

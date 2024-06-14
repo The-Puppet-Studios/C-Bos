@@ -59,3 +59,23 @@ def base64decode(encoded_str):
     decoded_bytes = base64.b64decode(encoded_str.encode("utf-8"))
     decoded_str = decoded_bytes.decode("utf-8")
     return decoded_str
+
+def settitle(title):
+    ctypes.windll.kernel32.SetConsoleTitleW(title)
+
+def adminauth(code):
+    url = 'https://thepuppet57.141412.xyz/tps/cbos/backend/adminauth.php'
+    data = {
+        'password': code
+    }
+
+    response = requests.post(url, data=data)
+
+
+    if(response.status_code == 200):
+        if(response.text == "yay"):
+            return True
+        else:
+            return False
+    else:
+        return "There was an error. Status code:", response.status_code
