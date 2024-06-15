@@ -73,8 +73,10 @@ while cmdloop:
         # The home of admin commands.
         if(lowercmd == "admin real"):
             print("yay")
-
     
-
+    elif(lowercmd == "SubToPuppet"):
+        print("https://www.youtube.com/@thepuppetqueen57")
+        elif(lowercmd == "SubToCJ"):
+        print("butteredtoast.141412.xyz")
     else:
         print(f"{cmd} is stupid! try again!")
