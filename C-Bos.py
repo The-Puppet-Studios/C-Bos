@@ -29,6 +29,7 @@ if(adminyay == "y"):
         cboslib.cprint("Admin code not correct.")
 else:
     cboslib.cprint("Not an admin...")
+    isadmin = False
 
 time.sleep(0.3)
 
@@ -55,6 +56,8 @@ while cmdloop:
         cboslib.cprint("4: Base64 decode (decodes text)")
         time.sleep(0.1)
         cboslib.cprint("5: Check version (checks for updates)")
+        time.sleep(0.1)
+        cboslib.cprint("6: Credits (Shows credits)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
@@ -67,16 +70,19 @@ while cmdloop:
     elif(lowercmd == "check version"):
         cboslib.versioncheck(version)
 
+    elif(lowercmd == "credits"):
+        print("Puppet: https://thepuppet57.141412.xyz")
+        print("Cj: http://butteredtoast.141412.xyz")
+        
     
+
 
     elif(isadmin):
         # The home of admin commands.
         if(lowercmd == "admin real"):
             print("yay")
+
+
     
-    elif(lowercmd == "SubToPuppet"):
-        print("https://www.youtube.com/@thepuppetqueen57")
-        elif(lowercmd == "SubToCJ"):
-        print("butteredtoast.141412.xyz")
     else:
         print(f"{cmd} is stupid! try again!")
