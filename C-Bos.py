@@ -9,7 +9,7 @@ cboslib.settitle("C-Bos")
 
 cboslib.cprint("Booting cbos the crappy os...")
 time.sleep(0.5)
-version = 2.1
+version = 2.11
 cboslib.cprint("Checking for updates...")
 cboslib.versioncheck(version)
 time.sleep(0.3)
@@ -58,6 +58,10 @@ while cmdloop:
         cboslib.cprint("5: Check version (checks for updates)")
         time.sleep(0.1)
         cboslib.cprint("6: Credits (Shows credits)")
+        time.sleep(0.1)
+        cboslib.cprint("7: Get server text (Shows the text of a txt file on the server)")
+        time.sleep(0.1)
+        cboslib.cprint("8: Edit server text (Edits a txt on the server)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
@@ -73,6 +77,13 @@ while cmdloop:
     elif(lowercmd == "credits"):
         print("Puppet: https://thepuppet57.141412.xyz")
         print("Cj: http://butteredtoast.141412.xyz")
+
+    elif(lowercmd == "get server text"):
+        cboslib.getservertext()
+    
+    elif(lowercmd == "edit server text"):
+        boobiehahahaha = input("New text: ")
+        cboslib.editservertext(boobiehahahaha)
         
     
 

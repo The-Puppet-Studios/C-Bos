@@ -79,3 +79,29 @@ def adminauth(code):
             return False
     else:
         return "There was an error. Status code:", response.status_code
+    
+def getservertext():
+    url = "https://thepuppet57.141412.xyz/tps/cbos/backend/getservertext.php"
+
+    response = requests.get(url)
+
+    if(response.status_code == 200):
+        print(response.text)
+    else:
+        print("There was an error. Status code:", response.status_code)
+
+def editservertext(text):
+    url = "https://thepuppet57.141412.xyz/tps/cbos/backend/editservertext.php"
+    data = {
+        "text": text
+    }
+
+    response = requests.post(url, data=data)
+
+    if(response.status_code == 200):
+        if(response.text == "The file has been updated successfully."):
+            print("Text updated sccessfully!")
+        else:
+            print("Unknown error when editing text")
+    else:
+        print("There was an error. Status code:", response.status_code)
