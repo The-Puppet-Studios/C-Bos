@@ -4,6 +4,7 @@ import requests
 import colorama
 import ctypes
 import sys
+import random
 
 cboslib.settitle("C-Bos")
 
@@ -84,6 +85,20 @@ while cmdloop:
     elif(lowercmd == "edit server text"):
         boobiehahahaha = input("New text: ")
         cboslib.editservertext(boobiehahahaha)
+
+    elif(lowercmd == "luck game"):
+        cboslib.cprint("Type help for what you can do")
+        kys = input(cboslib.randomstringcolor("What do you want to do: ")).lower()
+        if(kys == "play"):
+            gonnabeatyou = 0
+            nope = 0
+
+            while gonnabeatyou != 10:
+                nope += 1
+                gonnabeatyou = random.randint(1, 10)
+                cboslib.cprint(f"You score is: {nope}")
+                time.sleep(0.05)
+
         
     
 

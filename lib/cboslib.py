@@ -1,4 +1,3 @@
-from lib import cboslib
 import time
 import requests
 import colorama
