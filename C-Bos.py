@@ -63,6 +63,8 @@ while cmdloop:
         cboslib.cprint("7: Get server text (Shows the text of a txt file on the server)")
         time.sleep(0.1)
         cboslib.cprint("8: Edit server text (Edits a txt on the server)")
+        time.sleep(0.1)
+        cboslib.cprint("9: Luck game (A little game about luck)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))

@@ -60,7 +60,13 @@ def base64decode(encoded_str):
     return decoded_str
 
 def settitle(title):
-    ctypes.windll.kernel32.SetConsoleTitleW(title)
+    # ok so basically windows is special and has stuff in python that no other os has.
+    # only found this issue recently cuz I tried running cbos on my arch linux vm
+    if os.name == 'nt':  # nt means Windows
+        ctypes.windll.kernel32.SetConsoleTitleW(title)
+    else:
+        # On Unix-like systems, you can use the `tput` command to set terminal title
+        print(f'\33]0;{title}\a', end='', flush=True)
 
 def adminauth(code):
     url = 'https://thepuppet57.141412.xyz/tps/cbos/backend/adminauth.php'
