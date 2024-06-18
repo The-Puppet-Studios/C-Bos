@@ -100,7 +100,13 @@ while cmdloop:
                 gonnabeatyou = random.randint(1, 10)
                 cboslib.cprint(f"You score is: {nope}")
                 time.sleep(0.05)
-
+        elif(kys == "help"):
+            cboslib.cprint("The cbos luck game is a game where it generates a random number from 1 to 10")
+            cboslib.cprint("It repeats this until the number is 10")
+            cboslib.cprint("Every time it repeats your score goes up")
+            cboslib.cprint("Try to get the highest score!")
+        elif(kys == "leaderboard" or kys == "leaderboards"):
+            cboslib.cprint("Leaderboards coming soon maybe")
         
     
 
