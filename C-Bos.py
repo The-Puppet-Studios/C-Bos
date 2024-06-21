@@ -105,8 +105,10 @@ while cmdloop:
             cboslib.cprint("It repeats this until the number is 10")
             cboslib.cprint("Every time it repeats your score goes up")
             cboslib.cprint("Try to get the highest score!")
-        elif(kys == "leaderboard" or kys == "leaderboards"):
-            cboslib.cprint("Leaderboards coming soon maybe")
+            time.sleep(1)
+            cboslib.cprint("Now here is a list of commands. There is only 1 rn.")
+            time.sleep(0.3)
+            cboslib.cprint("1: Play (plays the game)")
         
     
 
