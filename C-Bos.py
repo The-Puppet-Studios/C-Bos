@@ -65,6 +65,8 @@ while cmdloop:
         cboslib.cprint("8: Edit server text (Edits a txt on the server)")
         time.sleep(0.1)
         cboslib.cprint("9: Luck game (A little game about luck)")
+        time.sleep(0.1)
+        cboslib.cprint("10: Ghost story (Tells a random ghost story)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
@@ -109,6 +111,9 @@ while cmdloop:
             cboslib.cprint("Now here is a list of commands. There is only 1 rn.")
             time.sleep(0.3)
             cboslib.cprint("1: Play (plays the game)")
+
+    elif(lowercmd == "ghost story"):
+        cboslib.randomghoststory()
         
     
 

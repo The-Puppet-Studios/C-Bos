@@ -110,3 +110,57 @@ def editservertext(text):
             print("Unknown error when editing text")
     else:
         print("There was an error. Status code:", response.status_code)
+
+def randomghoststory():
+    choices = [
+        "cboscpp",
+        "luckgameleaderboards",
+        "xytriza"
+    ]
+
+    story = random.choice(choices)
+
+    if(story == "cboscpp"):
+        cprint("Once...")
+        time.sleep(3)
+        cprint("For a very short time...")
+        time.sleep(3)
+        cprint("There was a version of cbos written in c++ but...")
+        time.sleep(3)
+        cprint("Theres this thing called...")
+        time.sleep(3)
+        print(colorama.Fore.RED + colorama.Style.BRIGHT + "CURL" + colorama.Style.RESET_ALL)
+        time.sleep(3)
+        cprint("It was a c++ library to interact with a server... But it brought PAIN AND SUFFERING")
+        time.sleep(3)
+        cprint("And thats the story of how cbos was rewritten in python instead of c++")
+
+    elif(story == "luckgameleaderboards"):
+        cprint("Once...")
+        time.sleep(3)
+        cprint("Puppet tried making leaderboards for the luck game...")
+        time.sleep(3)
+        cprint("This was never completed because...")
+        time.sleep(3)
+        cprint("Puppet slowly went insane trying to make it...")
+        time.sleep(3)
+        cprint("Then she snapped and deleted all the changes...")
+        time.sleep(3)
+        cprint("The code was never seen again...")
+        time.sleep(3)
+        cprint("And thats the story of how the luck game never got leaderboards")
+
+    elif(story == "xytriza"):
+        cprint("Once...")
+        time.sleep(3)
+        cprint("There was a second dev for cbos...")
+        time.sleep(3)
+        cprint("His name was...")
+        time.sleep(3)
+        cprint("Xytriza...")
+        time.sleep(3)
+        cprint("One day he deleted his github account...")
+        time.sleep(3)
+        cprint("Never to be seen again...")
+        time.sleep(3)
+        cprint("And thats the story of how xytriza died")
