@@ -115,7 +115,8 @@ def randomghoststory():
     choices = [
         "cboscpp",
         "luckgameleaderboards",
-        "xytriza"
+        "xytriza",
+        "oldhelp"
     ]
 
     story = random.choice(choices)
@@ -164,3 +165,18 @@ def randomghoststory():
         cprint("Never to be seen again...")
         time.sleep(3)
         cprint("And thats the story of how xytriza died")
+
+    elif(story == "oldhelp"):
+        cprint("Once...")
+        time.sleep(3)
+        cprint("In the original cbos...")
+        time.sleep(3)
+        cprint("There was... The old help command...")
+        time.sleep(3)
+        cprint("The old help command had ZERO new lines...")
+        time.sleep(3)
+        cprint("Is was a disgusting mess...")
+        time.sleep(3)
+        cprint("Then it was replaced in cbos 1.1 never to be seen again...")
+        time.sleep(3)
+        cprint("And thats the story of how the help command isnt garbage anymore")
