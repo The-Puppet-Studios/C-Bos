@@ -36,18 +36,37 @@ def randomstringcolor(string):
 def cprint(string):
     print(randomstringcolor(string))
 
+# Hey so this function is a pretty good place to start if you have never done requests before
+# So basically this function will basically be a guide
+# The php on the server only returns a float btw so I'll put the php code here
+# versioncheck.php:
+# <?php
+# echo 2.12
+# ?>
+# Not gonna update the version number in that code example but who cares lol
 def versioncheck(version):
     url = "https://thepuppet57.141412.xyz/tps/cbos/backend/versioncheck.php"
     
+    # So basically this sends a get request to the php and turns the response into a float
+    # Lets break it down
+    # So it defines a variable to whatever value the php returns.
+    # request.get(url) actually sends a get request
+    # Just putting request.get(url) in a line of code does nothing
+    # Because python does nothing with the data
     response = requests.get(url)
     latestversion = float(response.text)
 
+    # Then this is basic logic really not hard to understand
     if(latestversion > version):
         cprint("Update available!")
     elif(latestversion < version):
         cprint("This is a beta!")
     else:
         cprint("No updates available!")
+# So yeah that was a get request in python. Post requests are basically the same
+# Just replace requests.get with requests.post and it looks the same but its very different
+# A post request is way more secure so if your transferring passwords then use the post request
+# Anyways bye bye
 
 def base64encode(string):
     encoded_bytes = base64.b64encode(string.encode("utf-8"))
