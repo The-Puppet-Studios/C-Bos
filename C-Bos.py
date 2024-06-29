@@ -67,6 +67,8 @@ while cmdloop:
         cboslib.cprint("9: Luck game (A little game about luck)")
         time.sleep(0.1)
         cboslib.cprint("10: Ghost story (Tells a random ghost story)")
+        time.sleep(0.1)
+        cboslib.cprint("11: How to add a command (Shows a guide on how to add a command)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
@@ -114,7 +116,16 @@ while cmdloop:
 
     elif(lowercmd == "ghost story"):
         cboslib.randomghoststory()
-        
+
+    elif(lowercmd == "how to add a command"):
+        cboslib.cprint("Open cbos.py with vs code")
+        time.sleep(0.5)
+        cboslib.cprint("And right below the bottom elif add another elif")
+        time.sleep(0.5)
+        cboslib.cprint("Example: elif(lowercmd == \"this is whatever you want the command to be\"): code to run")
+        time.sleep(0.5)
+        cboslib.cprint("You can probably figure out how to make a function in cboslib.py and if not tell me to add a guide for that")
+        time.sleep(0.5)        
     
 
 
