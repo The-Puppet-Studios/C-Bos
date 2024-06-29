@@ -17,7 +17,6 @@ def randomcolor():
     color_choices = [
         colorama.Fore.RED,
         colorama.Fore.GREEN,
-        colorama.Fore.YELLOW,
         colorama.Fore.BLUE,
         colorama.Fore.MAGENTA,
         colorama.Fore.CYAN,
@@ -26,7 +25,6 @@ def randomcolor():
         colorama.Fore.LIGHTGREEN_EX,
         colorama.Fore.LIGHTMAGENTA_EX,
         colorama.Fore.LIGHTRED_EX,
-        colorama.Fore.LIGHTYELLOW_EX
     ]
     return random.choice(color_choices)
 
