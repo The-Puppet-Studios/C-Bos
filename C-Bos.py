@@ -104,7 +104,9 @@ while cmdloop:
                 gonnabeatyou = random.randint(1, 10)
                 cboslib.cprint(f"You score is: {nope}")
                 time.sleep(0.05)
-            cboslib.updatehighscore(nope)
+            highscore = cboslib.gethighscore()
+            if(nope > highscore):
+                cboslib.updatehighscore(nope)
         elif(kys == "high score"):
             highscore = cboslib.gethighscore()
             print(f"Your high score is {highscore}!")
