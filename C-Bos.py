@@ -72,10 +72,18 @@ while cmdloop:
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
         print(bumhole)
+        print("")
+        time.sleep(1)
+        cboslib.cprint("Btw if you want check out my base64 tool made in kotlin")
+        cboslib.cprint("https://github.com/Thepuppetqueen57/Basket")
 
     elif(lowercmd == "base64 decode"):
         bum = cboslib.base64decode(input("Encoded string: "))
         print(bum)
+        print("")
+        time.sleep(1)
+        cboslib.cprint("Btw if you want check out my base64 tool made in kotlin")
+        cboslib.cprint("https://github.com/Thepuppetqueen57/Basket")
 
     elif(lowercmd == "check version"):
         cboslib.versioncheck(version)
