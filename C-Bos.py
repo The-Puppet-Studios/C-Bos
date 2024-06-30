@@ -9,7 +9,7 @@ cboslib.settitle("C-Bos")
 
 cboslib.cprint("Booting cbos the crappy os...")
 time.sleep(0.5)
-version = 2.12
+version = 2.13
 cboslib.cprint("Checking for updates...")
 cboslib.versioncheck(version)
 time.sleep(0.3)
@@ -57,7 +57,7 @@ while cmdloop:
         time.sleep(0.1)
         cboslib.cprint("5: Check version (checks for updates)")
         time.sleep(0.1)
-        cboslib.cprint("6: Credits (Shows credits)")
+        cboslib.cprint("6: Credits (Shows credits and some other stuff)")
         time.sleep(0.1)
         cboslib.cprint("7: Get server text (Shows the text of a txt file on the server)")
         time.sleep(0.1)
@@ -91,6 +91,7 @@ while cmdloop:
     elif(lowercmd == "credits"):
         print("Puppet: https://thepuppet57.141412.xyz")
         print("Cj: http://butteredtoast.141412.xyz")
+        print("C-Bos legacy: https://github.com/Thepuppetqueen57/C-Bos-Legacy")
 
     elif(lowercmd == "get server text"):
         cboslib.getservertext()
@@ -140,7 +141,7 @@ while cmdloop:
         cboslib.cprint("Example: elif(lowercmd == \"this is whatever you want the command to be\"): code to run")
         time.sleep(0.5)
         cboslib.cprint("You can probably figure out how to make a function in cboslib.py and if not tell me to add a guide for that")
-        time.sleep(0.5)        
+        time.sleep(0.5)
     
 
 
