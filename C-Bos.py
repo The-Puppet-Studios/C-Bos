@@ -2,7 +2,6 @@ from lib import cboslib
 import time
 import requests
 import colorama
-import ctypes
 import sys
 import random
 
