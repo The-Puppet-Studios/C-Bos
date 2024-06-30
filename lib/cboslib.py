@@ -6,6 +6,7 @@ import ctypes
 import sys
 import os
 import base64
+import json
 
 def clear_console():
     if sys.platform.startswith('win'):
@@ -197,3 +198,25 @@ def randomghoststory():
         cprint("Then it was replaced in cbos 1.1 never to be seen again...")
         time.sleep(3)
         cprint("And thats the story of how the help command isnt garbage anymore")
+
+def updatehighscore(new_highscore):
+    file_path = os.path.join('lib', 'stuff.json')
+
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+
+    data['luckgamedata']['highscore'] = new_highscore
+
+    with open(file_path, 'w') as file:
+        json.dump(data, file, indent=4)
+
+def gethighscore():
+    file_path = os.path.join('lib', 'stuff.json')
+
+    if not os.path.exists(file_path):
+        return None
+
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+
+    return data['luckgamedata']['highscore']
