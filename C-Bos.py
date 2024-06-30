@@ -97,16 +97,16 @@ while cmdloop:
         kys = input(cboslib.randomstringcolor("What do you want to do: ")).lower()
         if(kys == "play"):
             gonnabeatyou = 0
-            nope = 0
+            score = 0
 
             while gonnabeatyou != 10:
-                nope += 1
+                score += 1
                 gonnabeatyou = random.randint(1, 10)
-                cboslib.cprint(f"You score is: {nope}")
+                cboslib.cprint(f"You score is: {score}")
                 time.sleep(0.05)
             highscore = cboslib.gethighscore()
-            if(nope > highscore):
-                cboslib.updatehighscore(nope)
+            if(score > highscore):
+                cboslib.updatehighscore(score)
         elif(kys == "high score"):
             highscore = cboslib.gethighscore()
             print(f"Your high score is {highscore}!")
