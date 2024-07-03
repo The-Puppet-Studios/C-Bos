@@ -148,7 +148,7 @@ while cmdloop:
     elif(isadmin):
         # The home of admin commands.
         if(lowercmd == "admin help"):
-            print("nothing yet")
+            print("there are currently no admin commands because I have no ideas for any at the moment")
 
 
     
