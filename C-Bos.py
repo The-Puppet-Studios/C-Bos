@@ -153,4 +153,9 @@ while cmdloop:
 
     
     else:
-        print(f"{cmd} is stupid! try again!")
+        dumberror = cboslib.getdumberror()
+
+        if(dumberror == True):
+            print(f"{cmd} is stupid! try again!")
+        else:
+            print(f"{cmd} is an invalid command. Please try again!")

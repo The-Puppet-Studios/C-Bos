@@ -1,5 +1,9 @@
 {
     "luckgamedata": {
         "highscore": 0
+    },
+
+    "options": {
+        "dumberror": true
     }
 }

@@ -220,3 +220,14 @@ def gethighscore():
         data = json.load(file)
 
     return data['luckgamedata']['highscore']
+
+def getdumberror():
+    json_path = os.path.join('lib', 'stuff.json')
+
+    with open(json_path, 'r') as file:
+        data = json.load(file)
+
+    if data.get('options', {}).get('dumberror', False):
+        return True
+    else:
+        return False
