@@ -231,3 +231,9 @@ def getdumberror():
         return True
     else:
         return False
+    
+def printnnl(strulung):
+    print(strulung, end="", flush=True)
+
+def cprintnnl(poo):
+    print(randomstringcolor(poo), end="", flush=True)
