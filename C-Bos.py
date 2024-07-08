@@ -166,6 +166,16 @@ while cmdloop:
             print("there are currently no admin commands because I have no ideas for any at the moment")
 
 
+
+        else:
+            dumberror = cboslib.getdumberror()
+
+            if(dumberror == True):
+                print(f"{cmd} is stupid! try again!")
+            else:
+                print(f"{cmd} is an invalid command. Please try again!")
+
+
     
     else:
         dumberror = cboslib.getdumberror()
