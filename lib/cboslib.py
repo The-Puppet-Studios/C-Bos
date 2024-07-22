@@ -237,3 +237,19 @@ def printnnl(strulung):
 
 def cprintnnl(poo):
     print(randomstringcolor(poo), end="", flush=True)
+
+def magicball():
+    outcomes = [
+        "Nope",
+        "Nuh uh",
+        "Maybe idk",
+        "I don't get paid enough for this",
+        "Yea bro",
+        "Your question is stupid so I won't answer",
+        "This is so cool bro so like yeah",
+        "yes yes"
+    ]
+
+    outcome = random.choice(outcomes)
+
+    return outcome

@@ -70,6 +70,8 @@ while cmdloop:
         cboslib.cprint("11: How to add a command (Shows a guide on how to add a command)")
         time.sleep(0.1)
         cboslib.cprint("12: Hello (says hi to you)")
+        time.sleep(0.1)
+        cboslib.cprint("13: Magic eight ball (let cbos decide your fate)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
@@ -157,6 +159,12 @@ while cmdloop:
         cboslib.cprintnnl("o")
         time.sleep(0.1)
         print("")
+
+    elif(lowercmd == "magic eight ball"):
+        question = input("Whats your question bro: ")
+        print("Lemme think bro")
+        time.sleep(1)
+        print(cboslib.magicball())
     
 
 
