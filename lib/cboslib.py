@@ -54,12 +54,16 @@ def versioncheck(version):
     # So basically this sends a get request to the php and turns the response into a float
     # Lets break it down
     # So it defines a variable to whatever value the php returns.
-    # request.get(url) actually sends a get request
-    # Just putting request.get(url) in a line of code does nothing
+    # request.get(versionchecklink, params=data) actually sends a get request
+    # Just putting request.get(versionchecklink, params=data) in a line of code does nothing
     # Because python does nothing with the data
     # This is in a try block because if the server is down cbos will crash
     try:
-        response = requests.get(versionchecklink)
+        data = {
+            "edition": "normal"
+        }
+
+        response = requests.get(versionchecklink, params=data)
         latestversion = float(response.text)
 
         # Then this is basic logic really not hard to understand
