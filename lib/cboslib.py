@@ -8,6 +8,13 @@ import os
 import base64
 import json
 
+# These are variables for links.
+# Makes changing links faster for if links change for some reason.
+versionchecklink = "https://thepuppet57.alwaysdata.net/tps/cbos/backend/versioncheck.php"
+getservertextlink = "https://thepuppet57.alwaysdata.net/tps/cbos/backend/getservertext.php"
+editservertextlink = "https://thepuppet57.alwaysdata.net/tps/cbos/backend/editservertext.php"
+adminauthlink = "https://thepuppet57.alwaysdata.net/tps/cbos/backend/adminauth.php"
+
 def clear_console():
     if sys.platform.startswith('win'):
         os.system('cls')
@@ -44,24 +51,26 @@ def cprint(string):
 # ?>
 # Not gonna update the version number in that code example but who cares lol
 def versioncheck(version):
-    url = "https://thepuppet57.141412.xyz/tps/cbos/backend/versioncheck.php"
-    
     # So basically this sends a get request to the php and turns the response into a float
     # Lets break it down
     # So it defines a variable to whatever value the php returns.
     # request.get(url) actually sends a get request
     # Just putting request.get(url) in a line of code does nothing
     # Because python does nothing with the data
-    response = requests.get(url)
-    latestversion = float(response.text)
+    # This is in a try block because if the server is down cbos will crash
+    try:
+        response = requests.get(versionchecklink)
+        latestversion = float(response.text)
 
-    # Then this is basic logic really not hard to understand
-    if(latestversion > version):
-        cprint("Update available!")
-    elif(latestversion < version):
-        cprint("This is a beta!")
-    else:
-        cprint("No updates available!")
+        # Then this is basic logic really not hard to understand
+        if(latestversion > version):
+            cprint("Update available!")
+        elif(latestversion < version):
+            cprint("This is a beta!")
+        else:
+            cprint("No updates available!")
+    except:
+        print("Version check failed. Please check your internet connection.")
 # So yeah that was a get request in python. Post requests are basically the same
 # Just replace requests.get with requests.post and it looks the same but its very different
 # A post request is way more secure so if your transferring passwords then use the post request
@@ -87,12 +96,11 @@ def settitle(title):
         print(f'\33]0;{title}\a', end='', flush=True)
 
 def adminauth(code):
-    url = 'https://thepuppet57.141412.xyz/tps/cbos/backend/adminauth.php'
     data = {
         'password': code
     }
 
-    response = requests.post(url, data=data)
+    response = requests.post(adminauthlink, data=data)
 
 
     if(response.status_code == 200):
@@ -104,9 +112,7 @@ def adminauth(code):
         return "There was an error. Status code:", response.status_code
     
 def getservertext():
-    url = "https://thepuppet57.141412.xyz/tps/cbos/backend/getservertext.php"
-
-    response = requests.get(url)
+    response = requests.get(getservertextlink)
 
     if(response.status_code == 200):
         print(response.text)
@@ -114,7 +120,7 @@ def getservertext():
         print("There was an error. Status code:", response.status_code)
 
 def editservertext(text):
-    url = "https://thepuppet57.141412.xyz/tps/cbos/backend/editservertext.php"
+    url = editservertextlink
     data = {
         "text": text
     }
