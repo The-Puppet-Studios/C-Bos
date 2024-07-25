@@ -94,6 +94,7 @@ while cmdloop:
 
     elif(lowercmd == "credits"):
         print("Puppet: https://thepuppet57.141412.xyz")
+        print("Dexter (theuntrueone): Dizzy5g")
         print("Cj: http://butteredtoast.141412.xyz")
         print("C-Bos legacy: https://github.com/Thepuppetqueen57/C-Bos-Legacy")
 
@@ -165,6 +166,7 @@ while cmdloop:
         print("Lemme think bro")
         time.sleep(1)
         print(cboslib.magicball())
+
     
 
 
