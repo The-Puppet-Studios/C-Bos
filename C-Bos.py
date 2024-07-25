@@ -4,6 +4,7 @@ import requests
 import colorama
 import sys
 import random
+import pwinput
 
 cboslib.settitle("C-Bos")
 
@@ -20,7 +21,7 @@ time.sleep(0.3)
 adminyay = input(cboslib.randomstringcolor("Are you an admin? [Y/N]: ")).lower()
 
 if(adminyay == "y"):
-    admincode = input(cboslib.randomstringcolor("Put in the admin code: "))
+    admincode = pwinput.pwinput(prompt=cboslib.randomstringcolor("Put in the admin code: "))
     cboslib.cprint("Authenticating...")
     isadmin = cboslib.adminauth(admincode)
     if(isadmin == True):
@@ -93,8 +94,8 @@ while cmdloop:
         cboslib.versioncheck(version)
 
     elif(lowercmd == "credits"):
-        print("Puppet: https://thepuppet57.141412.xyz")
-        print("Dexter (theuntrueone): Dizzy5g")
+        print("Puppet: https://thepuppet57.alwaysdata.net")
+        print("Dexter (theuntrueone): Dizzy5g on discord")
         print("Cj: http://butteredtoast.141412.xyz")
         print("C-Bos legacy: https://github.com/Thepuppetqueen57/C-Bos-Legacy")
 
