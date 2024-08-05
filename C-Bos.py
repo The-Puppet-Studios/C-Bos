@@ -1,18 +1,19 @@
 from lib import cboslib
+from lib.cboslib import version
 import time
 import requests
 import colorama
 import sys
 import random
 import pwinput
+import runpy
 
 cboslib.settitle("C-Bos")
 
 cboslib.cprint("Booting cbos the crappy os...")
 time.sleep(0.5)
-version = 2.20
 cboslib.cprint("Checking for updates...")
-cboslib.versioncheck(version)
+cboslib.cprint(cboslib.versioncheck(version))
 time.sleep(0.3)
 cboslib.cprint("Done!")
 time.sleep(0.3)
@@ -73,6 +74,8 @@ while cmdloop:
         cboslib.cprint("12: Hello (says hi to you)")
         time.sleep(0.1)
         cboslib.cprint("13: Magic eight ball (let cbos decide your fate)")
+        time.sleep(0.1)
+        cboslib.cprint("14: Gui (An optional gui for cbos. Won't have all cbos features.)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
@@ -91,7 +94,7 @@ while cmdloop:
         cboslib.cprint("https://github.com/Thepuppetqueen57/Basket")
 
     elif(lowercmd == "check version"):
-        cboslib.versioncheck(version)
+        cboslib.cprint(cboslib.versioncheck(version))
 
     elif(lowercmd == "credits"):
         print("Puppet: https://thepuppet57.alwaysdata.net")
@@ -167,6 +170,11 @@ while cmdloop:
         print("Lemme think bro")
         time.sleep(1)
         print(cboslib.magicball())
+
+    elif(lowercmd == "gui"):
+        cboslib.cprint("Gui opened!")
+        runpy.run_path("lib/gui.py")
+        cboslib.cprint("Gui closed!")
 
     
 

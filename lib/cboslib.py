@@ -7,6 +7,7 @@ import sys
 import os
 import base64
 import json
+from collections import namedtuple
 
 # These are variables for links.
 # Makes changing links faster for if links change for some reason.
@@ -14,6 +15,8 @@ versionchecklink = "https://thepuppet57.alwaysdata.net/tps/cbos/backend/versionc
 getservertextlink = "https://thepuppet57.alwaysdata.net/tps/cbos/backend/getservertext.php"
 editservertextlink = "https://thepuppet57.alwaysdata.net/tps/cbos/backend/editservertext.php"
 adminauthlink = "https://thepuppet57.alwaysdata.net/tps/cbos/backend/adminauth.php"
+
+version = 3.00
 
 def clear_console():
     if sys.platform.startswith('win'):
@@ -68,13 +71,13 @@ def versioncheck(version):
 
         # Then this is basic logic really not hard to understand
         if(latestversion > version):
-            cprint("Update available!")
+            return "Update available!"
         elif(latestversion < version):
-            cprint("This is a beta!")
+            return "This is a beta!"
         else:
-            cprint("No updates available!")
+            return "No updates available!"
     except:
-        print("Version check failed. Please check your internet connection.")
+        return "Version check failed. Please check your internet connection."
 # So yeah that was a get request in python. Post requests are basically the same
 # Just replace requests.get with requests.post and it looks the same but its very different
 # A post request is way more secure so if your transferring passwords then use the post request
@@ -263,3 +266,21 @@ def magicball():
     outcome = random.choice(outcomes)
 
     return outcome
+
+def getversion(version):
+    try:
+        Result = namedtuple('Result', ['latestversion', 'version'])
+        Error = "Version check failed. Please check your internet connection."
+
+        data = {
+            "edition": "normal"
+        }
+
+        response = requests.get(versionchecklink, params=data)
+        latestversion = float(response.text)
+
+        return Result(latestversion, version)
+
+        
+    except:
+        return Result(Error, Error)
