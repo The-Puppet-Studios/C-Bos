@@ -138,7 +138,7 @@ def editservertext(text):
         if(response.text == "The file has been updated successfully."):
             print("Text updated sccessfully!")
         elif(response.text == "Script tag detected. The server text has not been edited."):
-            print(response.text)
+            print("Javascript detected. The server text has not been edited.")
         else:
             print("Unknown error when editing text")
     else:
