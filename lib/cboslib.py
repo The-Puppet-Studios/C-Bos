@@ -270,8 +270,8 @@ def magicball():
     return outcome
 
 def getversion(version):
+    Result = namedtuple('Result', ['latestversion', 'version'])
     try:
-        Result = namedtuple('Result', ['latestversion', 'version'])
         Error = "Version check failed. Please check your internet connection."
 
         data = {
