@@ -76,6 +76,8 @@ while cmdloop:
         cboslib.cprint("13: Magic eight ball (let cbos decide your fate)")
         time.sleep(0.1)
         cboslib.cprint("14: Gui (An optional gui for cbos. Won't have all cbos features.)")
+        time.sleep(0.1)
+        cboslib.cprint("15: Exit! (Exit command but instant)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
@@ -175,6 +177,9 @@ while cmdloop:
         cboslib.cprint("Gui opened!")
         runpy.run_path("lib/gui.py")
         cboslib.cprint("Gui closed!")
+
+    elif(lowercmd == "exit!"):
+        sys.exit()
 
     
 
