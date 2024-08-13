@@ -12,8 +12,10 @@ def show_main_page():
     main_frame.pack(fill='both', expand=True)
 
 def show_version_page():
-    latestversion = getversion(version).latestversion
-    installedversion = getversion(version).version
+    versionchecks = versioncheck(version)
+    latestversion = versionchecks.latestversion
+    installedversion = versionchecks.version
+    available = versionchecks.available
 
     main_frame.pack_forget()
     
@@ -29,7 +31,7 @@ def show_version_page():
     back_button.pack()
     add_button_effect(back_button)
     
-    version_label = tk.Label(version_frame, text=versioncheck(version), font=("Helvetica", 20), fg="white", bg="black")
+    version_label = tk.Label(version_frame, text=available, font=("Helvetica", 20), fg="white", bg="black")
     version_label.pack(pady=10)
     
     test_label = tk.Label(version_frame, text=f"Latest Version: {latestversion}", font=("Helvetica", 16), fg="white", bg="black")

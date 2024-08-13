@@ -47,6 +47,7 @@ def cprint(string):
 
 
 def versioncheck(version):
+    Result = namedtuple('Result', ['latestversion', 'version', 'available'])
     try:
         data = {
             "edition": "normal"
@@ -55,13 +56,12 @@ def versioncheck(version):
         response = requests.get(versionchecklink, params=data)
         latestversion = float(response.text)
 
-        # Then this is basic logic really not hard to understand
         if(latestversion > version):
-            return "Update available!"
+            return Result(latestversion, version, "Updates available!")
         elif(latestversion < version):
-            return "This is a beta!"
+            return Result(latestversion, version, "This is a beta!")
         else:
-            return "No updates available!"
+            return Result(latestversion, version, "No updates available!")
     except:
         return "Version check failed. Please check your internet connection."
 
@@ -250,21 +250,3 @@ def magicball():
     outcome = random.choice(outcomes)
 
     return outcome
-
-def getversion(version):
-    Result = namedtuple('Result', ['latestversion', 'version'])
-    try:
-        Error = "Version check failed. Please check your internet connection."
-
-        data = {
-            "edition": "normal"
-        }
-
-        response = requests.get(versionchecklink, params=data)
-        latestversion = float(response.text)
-
-        return Result(latestversion, version)
-
-        
-    except:
-        return Result(Error, Error)

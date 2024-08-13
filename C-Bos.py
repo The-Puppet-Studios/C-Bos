@@ -13,7 +13,7 @@ cboslib.settitle("C-Bos")
 cboslib.cprint("Booting cbos the crappy os...")
 time.sleep(0.5)
 cboslib.cprint("Checking for updates...")
-cboslib.cprint(cboslib.versioncheck(version))
+cboslib.cprint(cboslib.versioncheck(version).available)
 time.sleep(0.3)
 cboslib.cprint("Done!")
 time.sleep(0.3)
@@ -94,7 +94,7 @@ while cmdloop:
         cboslib.cprint("https://github.com/Thepuppetqueen57/Basket")
 
     elif(lowercmd == "check version"):
-        cboslib.cprint(cboslib.versioncheck(version))
+        cboslib.cprint(cboslib.versioncheck(version).available)
 
     elif(lowercmd == "credits"):
         print("Puppet: https://thepuppet57.alwaysdata.net")
