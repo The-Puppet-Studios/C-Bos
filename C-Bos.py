@@ -13,7 +13,10 @@ cboslib.settitle("C-Bos")
 cboslib.cprint("Booting cbos the crappy os...")
 time.sleep(0.5)
 cboslib.cprint("Checking for updates...")
-cboslib.cprint(cboslib.versioncheck(version).available)
+try:
+    cboslib.cprint(cboslib.versioncheck(version).available)
+except:
+    cboslib.cprint("Version check failed. Please check your internet connection.")
 time.sleep(0.3)
 cboslib.cprint("Done!")
 time.sleep(0.3)
