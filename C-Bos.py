@@ -81,6 +81,8 @@ while cmdloop:
         cboslib.cprint("14: Gui (An optional gui for cbos. Won't have all cbos features.)")
         time.sleep(0.1)
         cboslib.cprint("15: Exit! (Exit command but instant)")
+        time.sleep(0.1)
+        cboslib.cprint("16: Cd (hmmm)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
@@ -183,6 +185,9 @@ while cmdloop:
 
     elif(lowercmd == "exit!"):
         sys.exit()
+
+    elif(lowercmd == "cd"):
+        cboslib.cprint("Not yet :)")
 
     
 
