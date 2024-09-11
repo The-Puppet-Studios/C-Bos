@@ -81,6 +81,8 @@ while cmdloop:
         cboslib.cprint("14: Gui (An optional gui for cbos. Won't have all cbos features.)")
         time.sleep(0.1)
         cboslib.cprint("15: Exit! (Exit command but instant)")
+        time.sleep(0.1)
+        cboslib.cprint("16: Exit? (Joke command. Don't take this seriously.)")
 
     elif(lowercmd == "base64 encode"):
         bumhole = cboslib.base64encode(input("String: "))
@@ -182,6 +184,21 @@ while cmdloop:
         cboslib.cprint("Gui closed!")
 
     elif(lowercmd == "exit!"):
+        sys.exit()
+
+    elif(lowercmd == "exit?"):
+        cboslib.cprint("oh hi")
+        time.sleep(3)
+        cboslib.cprint("I see you want to exit cbos. Why?")
+        time.sleep(5)
+        cboslib.cprint("Well go on. Speak.")
+        time.sleep(3)
+        cboslib.cprint("Okay are you mute or deaf?")
+        time.sleep(3)
+        cboslib.cprint("ANSWER ME")
+        time.sleep(3)
+        cboslib.cprint("Screw you I'm kicking you out of cbos")
+        time.sleep(1)
         sys.exit()
 
     
