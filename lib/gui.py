@@ -1,7 +1,6 @@
 import tkinter as tk
 from lib.cboslib import versioncheck
 from lib.cboslib import version
-from lib.cboslib import getversion
 from lib.cboslib import magicball
 
 def show_main_page():
