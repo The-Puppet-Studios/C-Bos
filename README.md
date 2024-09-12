@@ -5,3 +5,6 @@
 # How to use
  Install python then download the latest version of cbos then run install.cmd (it installs essential libraries)
  Then type `help` while in cbos
+
+# Old releases
+ To see releases before 3.0.0 please go to [the old repo.](https://github.com/Thepuppetqueen57/C-Bos)
