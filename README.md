@@ -14,8 +14,5 @@
 
   install.sh only works on arch based distros sadly.
 
-# Old releases
- To see releases before 3.0.0 please go to [the old repo.](https://github.com/Thepuppetqueen57/C-Bos)
-
 # State of Development
  Development on C-Bos is currently paused (mostly) and I dont know when it will be resumed.
